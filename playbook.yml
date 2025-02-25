@@ -1,0 +1,6 @@
+- name: Install the thing 
+  hosts: localhost
+  tasks:
+    - name: Call the thing 
+      ansible.builtin.include_tasks: tasks/main.yml
+      tags: always 

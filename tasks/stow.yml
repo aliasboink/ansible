@@ -1,0 +1,16 @@
+- name: Installing stow on Arch Linux
+  tags: stow
+  block:
+    - name: Installing stow
+      community.general.pacman:
+        name: stow 
+        state: present
+      become: true
+    - name: Cloning .dotfiles
+      ansible.builtin.git:
+        repo: 'git@github.com:aliasboink/.dotfiles.git'
+        dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
+        recursive: yes
+        update: yes
+        accept_hostkey: yes
+        version: main 

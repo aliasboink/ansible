@@ -1,0 +1,6 @@
+- name: Include NeoVim tasks
+  ansible.builtin.include_tasks: tasks/neovim.yml
+  tags: neovim
+- name: Include Stow tasks
+  ansible.builtin.include_tasks: tasks/stow.yml
+  tags: stow
