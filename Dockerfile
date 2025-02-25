@@ -5,6 +5,6 @@ RUN pacman -Syu --noconfirm && \
 
 RUN useradd -m -g users -G wheel gleip 
 RUN passwd -d gleip
+RUN passwd -d root 
+RUN echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
-USER gleip
-WORKDIR /home/gleip
