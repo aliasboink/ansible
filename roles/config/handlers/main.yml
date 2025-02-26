@@ -1,0 +1,5 @@
+---
+- name: Stow dotfiles
+  ansible.builtin.shell: cd $HOME/.dotfiles && stow .
+  when: _dotfiles.changed
+  listen: stow dotfiles

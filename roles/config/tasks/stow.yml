@@ -1,11 +1,5 @@
 - name: Installing stow on Arch Linux
   tags: stow
-
-  handlers:
-    - name: Stow dotfiles
-      when: _dotfiles.changed
-      shell: cd $HOME/.dotfiles && stow .
-
   block:
     - name: Installing stow
       community.general.pacman:
@@ -21,4 +15,5 @@
         update: yes
         accept_hostkey: yes
         version: main 
-      notify: Stow dotfiles
+      notify: stow dotfiles
+

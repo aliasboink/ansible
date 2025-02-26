@@ -2,5 +2,5 @@
   hosts: localhost
   tasks:
     - name: Call the thing 
-      ansible.builtin.include_tasks: tasks/main.yml
-      tags: always 
+      ansible.builtin.include_role:
+        name: config
