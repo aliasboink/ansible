@@ -15,5 +15,4 @@
         update: yes
         accept_hostkey: yes
         version: main 
-      notify: stow dotfiles
-
+      notify: Stow dotfiles 
