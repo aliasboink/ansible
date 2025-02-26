@@ -2,7 +2,7 @@ FROM archlinux:latest
 
 RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm base base-devel git sudo ansible && \
-    pacman -Scc --noconfirm
+    pacman -cc --noconfirm
 
 RUN useradd -m -g users -G wheel gleip && \
     echo "root:1234" | chpasswd && \
