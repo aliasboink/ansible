@@ -1,9 +1,6 @@
 - name: Include NeoVim tasks
   ansible.builtin.include_tasks: tasks/neovim.yml
   tags: neovim
-- name: Include Stow tasks
-  ansible.builtin.include_tasks: tasks/stow.yml
-  tags: stow
 - name: Include paru tasks
   ansible.builtin.include_tasks: tasks/paru.yml
   tags: paru
@@ -13,3 +10,6 @@
 - name: Include k9s tasks
   ansible.builtin.include_tasks: tasks/k9s.yml
   tags: k9s
+- name: Include Stow tasks
+  ansible.builtin.include_tasks: tasks/stow.yml
+  tags: stow
