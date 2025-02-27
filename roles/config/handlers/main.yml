@@ -1,4 +1,11 @@
 ---
 - name: Stow dotfiles
   ansible.builtin.shell: cd $HOME/.dotfiles && stow .
-  when: _dotfiles.changed
+  listen: "Stow dotfiles"
+
+- name: Build and install paru
+  ansible.builtin.command: makepkg -si --noconfirm
+  args:
+    chdir: /tmp/paru
+  become: false 
+  listen: "Build and install paru"

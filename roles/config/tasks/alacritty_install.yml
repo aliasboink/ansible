@@ -1,0 +1,11 @@
+- name: Installing Alacritty on Arch Linux
+  tags: alacritty
+  block:
+    - name: Install Alacritty
+      tags: alacritty
+      block: 
+        - name: Install Alacritty
+          community.general.pacman:
+            name: alacritty
+            state: present
+          become: true

@@ -4,3 +4,12 @@
 - name: Include Stow tasks
   ansible.builtin.include_tasks: tasks/stow.yml
   tags: stow
+- name: Include paru tasks
+  ansible.builtin.include_tasks: tasks/paru.yml
+  tags: paru
+- name: Include alacritty tasks
+  ansible.builtin.include_tasks: tasks/alacritty_install.yml
+  tags: alacritty
+- name: Include k9s tasks
+  ansible.builtin.include_tasks: tasks/k9s.yml
+  tags: k9s

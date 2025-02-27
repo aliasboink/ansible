@@ -1,0 +1,11 @@
+- name: Installing k9s on Arch Linux
+  tags: k9s
+  block:
+    - name: Install k9s on Arch Linux
+      tags: k9s
+      block:
+        - name: Install k9s
+          community.general.pacman:
+            name: k9s
+            state: present
+          become: true

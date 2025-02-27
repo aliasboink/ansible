@@ -1,6 +1,6 @@
 - name: Install NeoVim on Arch Linux
   tags: neovim
-  block: 
+  block:
     - name: Install NeoVim 
       community.general.pacman:
         name: neovim 

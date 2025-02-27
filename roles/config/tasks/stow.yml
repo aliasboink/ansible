@@ -3,16 +3,16 @@
   block:
     - name: Installing stow
       community.general.pacman:
-        name: stow 
+        name: stow
         state: present
       become: true
     - name: Cloning .dotfiles
-      register: _dotfiles 
+      register: _dotfiles
       ansible.builtin.git:
         repo: 'https://github.com/aliasboink/.dotfiles.git'
         dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
         recursive: yes
         update: yes
         accept_hostkey: yes
-        version: main 
-      notify: Stow dotfiles 
+        version: main
+      notify: "Stow dotfiles"

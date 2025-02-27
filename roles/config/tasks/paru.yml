@@ -1,0 +1,17 @@
+- name: Installing paru on Arch Linux
+  tags: paru
+  block:
+    - name: Install base-devel package
+      community.general.pacman:
+        name: base-devel
+        state: present
+      become: true
+
+    - name: Clone paru AUR repository
+      ansible.builtin.git:
+        repo: https://aur.archlinux.org/paru.git
+        dest: /tmp/paru
+        clone: yes
+        update: yes
+        version: master
+      notify: Build and install paru
